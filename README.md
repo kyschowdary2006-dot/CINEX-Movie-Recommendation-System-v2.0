@@ -3,7 +3,7 @@
 FastAPI + SQLite + scikit-learn ML — CINEX visual experience.
 
 ---
-
+```
 ## Project Structure
 
 CINEX-Movie-Recommendation-System-v2.0/     # Root folder of the CINEX project
@@ -69,7 +69,7 @@ CINEX-Movie-Recommendation-System-v2.0/     # Root folder of the CINEX project
 │
 └── README.md                               # Project documentation and setup guide
 
-
+```
 
 ---
 
