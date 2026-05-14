@@ -8,14 +8,6 @@ FastAPI + SQLite + scikit-learn ML — CINEX visual experience.
 
 CINEX-Movie-Recommendation-System-v2.0/     # Root folder of the CINEX project
 │
-├── .env                                    # Stores environment variables and secret keys
-├── requirements.txt                        # Contains all Python package dependencies
-│
-├── public/                                 # Frontend/static files
-│   ├── index.html                          # Main webpage of the application
-│   ├── style.css                           # CSS styles for UI design
-│   └── script.js                           # JavaScript functionality for frontend
-│
 ├── app/                                    # Main backend application folder
 │   │
 │   ├── main.py                             # Entry point of FastAPI/Flask application
@@ -31,24 +23,24 @@ CINEX-Movie-Recommendation-System-v2.0/     # Root folder of the CINEX project
 │   │       ├── recommend.py                # Recommendation system routes
 │   │       └── ratings.py                  # Movie ratings and reviews routes
 │   │
-│   ├── agent/                              # AI/Groq/CrewAI modules
-│   │   ├── agent.py                        # Main AI agent logic
+│   ├── agent/                              # AI/Groq/CrewAI related modules
+│   │   ├── agent.py                        # Main AI agent implementation
 │   │   ├── prompts.py                      # Prompt templates for AI interactions
-│   │   ├── memory.py                       # Context and memory management for AI
-│   │   └── tools.py                        # Custom AI tools and utilities
+│   │   ├── memory.py                       # AI memory/context management
+│   │   └── tools.py                        # Custom AI tools and helper utilities
 │   │
-│   ├── db/                                 # Database-related modules
-│   │   └── init_db.py                      # Database initialization and setup
+│   ├── db/                                 # Database-related files
+│   │   └── init_db.py                      # Database initialization script
 │   │
 │   ├── ml/                                 # Machine Learning modules
 │   │   ├── predict.py                      # Generates movie recommendations
-│   │   ├── preprocessing.py                # Cleans and preprocesses movie data
-│   │   ├── train.py                        # Model training script
+│   │   ├── preprocessing.py                # Data cleaning and preprocessing
+│   │   ├── train.py                        # ML model training script
 │   │   │
-│   │   └── store/                          # Stores trained ML models and processed data
+│   │   └── store/                          # Saved ML models and datasets
 │   │       ├── movie_index.pkl             # Indexed movie dataset
-│   │       ├── tfidf_vectorizer.pkl        # Saved TF-IDF vectorizer model
-│   │       ├── movie_meta.pkl              # Movie metadata information
+│   │       ├── tfidf_vectorizer.pkl        # Saved TF-IDF vectorizer
+│   │       ├── movie_meta.pkl              # Movie metadata storage
 │   │       └── tfidf_matrix.pkl            # TF-IDF feature matrix
 │   │
 │   ├── models/                             # Database models/classes
@@ -56,7 +48,7 @@ CINEX-Movie-Recommendation-System-v2.0/     # Root folder of the CINEX project
 │   │   ├── rating.py                       # Rating model definition
 │   │   └── user.py                         # User model definition
 │   │
-│   ├── schemas/                            # Validation schemas for APIs
+│   ├── schemas/                            # API validation schemas
 │   │   ├── user_schema.py                  # User request/response schemas
 │   │   ├── movie_schema.py                 # Movie request/response schemas
 │   │   └── rating_schema.py                # Rating request/response schemas
@@ -64,8 +56,19 @@ CINEX-Movie-Recommendation-System-v2.0/     # Root folder of the CINEX project
 │   └── services/                           # Business logic layer
 │       ├── movie_service.py                # Handles movie-related operations
 │       ├── rating_service.py               # Handles ratings and reviews logic
-│       ├── recommender.py                  # Core recommendation engine logic
-│       └── user_service.py                 # User management and operations
+│       ├── recommender.py                  # Core recommendation engine
+│       └── user_service.py                 # User management logic
+│
+├── public/                                 # Frontend/static website files
+│   ├── index.html                          # Main frontend webpage
+│   ├── style.css                           # Frontend styling
+│   └── script.js                           # Frontend JavaScript functionality
+│
+├── .env                                    # Environment variables and secret keys
+├── Dockerfile                              # Docker image configuration file
+├── docker-compose.yml                      # Multi-container Docker setup
+├── requirements.txt                        # Python package dependencies
+├── users.db                                # SQLite database storing user information
 │
 └── README.md                               # Project documentation and setup guide
 
