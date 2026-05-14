@@ -68,7 +68,8 @@ CINEX-Movie-Recommendation-System-v2.0/     # Root folder of the CINEX project
 │       └── user_service.py                 # User management and operations
 │
 └── README.md                               # Project documentation and setup guide
-```
+
+
 
 ---
 
