@@ -6,69 +6,68 @@ FastAPI + SQLite + scikit-learn ML — CINEX visual experience.
 
 ## Project Structure
 
-```
-cinex_groq/
+CINEX-Movie-Recommendation-System-v2.0/     # Root folder of the CINEX project
 │
-├── .env
-├── requirements.txt
+├── .env                                    # Stores environment variables and secret keys
+├── requirements.txt                        # Contains all Python package dependencies
 │
-├── public/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
+├── public/                                 # Frontend/static files
+│   ├── index.html                          # Main webpage of the application
+│   ├── style.css                           # CSS styles for UI design
+│   └── script.js                           # JavaScript functionality for frontend
 │
-├── app/
+├── app/                                    # Main backend application folder
 │   │
-│   ├── main.py
-│   ├── config.py
-│   ├── dependencies.py
+│   ├── main.py                             # Entry point of FastAPI/Flask application
+│   ├── config.py                           # Application configuration settings
+│   ├── dependencies.py                     # Shared dependencies and helper functions
 │   │
-│   ├── api/
-│   │   ├── router.py
+│   ├── api/                                # API routing layer
+│   │   ├── router.py                       # Combines and manages all API routes
 │   │   │
-│   │   └── routes/
-│   │       ├── users.py
-│   │       ├── movies.py
-│   │       ├── recommend.py
-│   │       └── ratings.py
+│   │   └── routes/                         # Individual API route files
+│   │       ├── users.py                    # User authentication and profile routes
+│   │       ├── movies.py                   # Movie data handling routes
+│   │       ├── recommend.py                # Recommendation system routes
+│   │       └── ratings.py                  # Movie ratings and reviews routes
 │   │
-│   ├── agent/
-│   │   ├── agent.py
-│   │   ├── prompts.py
-│   │   ├── memory.py
-│   │   └── tools.py
+│   ├── agent/                              # AI/Groq/CrewAI modules
+│   │   ├── agent.py                        # Main AI agent logic
+│   │   ├── prompts.py                      # Prompt templates for AI interactions
+│   │   ├── memory.py                       # Context and memory management for AI
+│   │   └── tools.py                        # Custom AI tools and utilities
 │   │
-│   ├── db/
-│   │   └── init_db.py
+│   ├── db/                                 # Database-related modules
+│   │   └── init_db.py                      # Database initialization and setup
 │   │
-│   ├── ml/
-│   │   ├── predict.py
-│   │   ├── preprocessing.py
-│   │   ├── train.py
+│   ├── ml/                                 # Machine Learning modules
+│   │   ├── predict.py                      # Generates movie recommendations
+│   │   ├── preprocessing.py                # Cleans and preprocesses movie data
+│   │   ├── train.py                        # Model training script
 │   │   │
-│   │   └── store/
-│   │       ├── movie_index.pkl
-│   │       ├── tfidf_vectorizer.pkl
-│   │       ├── movie_meta.pkl
-│   │       └── tfidf_matrix.pkl
+│   │   └── store/                          # Stores trained ML models and processed data
+│   │       ├── movie_index.pkl             # Indexed movie dataset
+│   │       ├── tfidf_vectorizer.pkl        # Saved TF-IDF vectorizer model
+│   │       ├── movie_meta.pkl              # Movie metadata information
+│   │       └── tfidf_matrix.pkl            # TF-IDF feature matrix
 │   │
-│   ├── models/
-│   │   ├── movie.py
-│   │   ├── rating.py
-│   │   └── user.py
+│   ├── models/                             # Database models/classes
+│   │   ├── movie.py                        # Movie model definition
+│   │   ├── rating.py                       # Rating model definition
+│   │   └── user.py                         # User model definition
 │   │
-│   ├── schemas/
-│   │   ├── user_schema.py
-│   │   ├── movie_schema.py
-│   │   └── rating_schema.py
+│   ├── schemas/                            # Validation schemas for APIs
+│   │   ├── user_schema.py                  # User request/response schemas
+│   │   ├── movie_schema.py                 # Movie request/response schemas
+│   │   └── rating_schema.py                # Rating request/response schemas
 │   │
-│   └── services/
-│       ├── movie_service.py
-│       ├── rating_service.py
-│       ├── recommender.py
-│       └── user_service.py
+│   └── services/                           # Business logic layer
+│       ├── movie_service.py                # Handles movie-related operations
+│       ├── rating_service.py               # Handles ratings and reviews logic
+│       ├── recommender.py                  # Core recommendation engine logic
+│       └── user_service.py                 # User management and operations
 │
-└── README.md (recommended to add)
+└── README.md                               # Project documentation and setup guide
 ```
 
 ---
