@@ -1,0 +1,31 @@
+# Web framework
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+
+# Database
+sqlalchemy>=2.0.0
+
+# Auth
+bcrypt>=4.0.0
+python-jose[cryptography]>=3.3.0
+
+# Config / env
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+pydantic[email]
+
+# Async HTTP (TMDB fetching)
+httpx>=0.27.0
+
+# ML / Data
+scikit-learn>=1.4.0
+pandas>=2.1.0
+numpy>=1.26.0
+scipy>=1.12.0
+
+# Misc
+python-multipart>=0.0.9
+aiofiles>=23.0.0
+
+# AI Agent — FREE Groq API (get key at console.groq.com)
+groq>=0.9.0

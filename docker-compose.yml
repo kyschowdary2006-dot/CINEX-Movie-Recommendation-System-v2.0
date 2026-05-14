@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app                        # live code reload
+      - ./users.db:/app/users.db      # persist SQLite DB
+      - ./app/ml/store:/app/app/ml/store  # persist trained models
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=sqlite:///./users.db
+    restart: unless-stopped
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
