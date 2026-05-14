@@ -7,76 +7,68 @@ FastAPI + SQLite + scikit-learn ML — CINEX visual experience.
 ## Project Structure
 
 ```
-movie-recommendation-system/
+cinex_groq/
+│
+├── .env
+├── requirements.txt
+│
+├── public/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
 ├── app/
-│   ├── main.py                  ← FastAPI entry point
-│   ├── config.py                ← Settings from .env
-│   ├── dependencies.py          ← Shared DB + auth deps
+│   │
+│   ├── main.py
+│   ├── config.py
+│   ├── dependencies.py
 │   │
 │   ├── api/
-│   │   ├── router.py            ← Combines all routes
+│   │   ├── router.py
+│   │   │
 │   │   └── routes/
-│   │       ├── users.py         ← /api/users/*
-│   │       ├── movies.py        ← /api/movies/*
-│   │       ├── ratings.py       ← /api/ratings/*, /api/comments/*
-│   │       └── recommend.py     ← /api/recommend/*
+│   │       ├── users.py
+│   │       ├── movies.py
+│   │       ├── recommend.py
+│   │       └── ratings.py
 │   │
-│   ├── services/
-│   │   ├── user_service.py      ← User DB operations
-│   │   ├── movie_service.py     ← Movie + watchlist + TMDB fetch
-│   │   ├── rating_service.py    ← Ratings + comments
-│   │   └── recommender.py       ← ML orchestration bridge
+│   ├── agent/
+│   │   ├── agent.py
+│   │   ├── prompts.py
+│   │   ├── memory.py
+│   │   └── tools.py
+│   │
+│   ├── db/
+│   │   └── init_db.py
+│   │
+│   ├── ml/
+│   │   ├── predict.py
+│   │   ├── preprocessing.py
+│   │   ├── train.py
+│   │   │
+│   │   └── store/
+│   │       ├── movie_index.pkl
+│   │       ├── tfidf_vectorizer.pkl
+│   │       ├── movie_meta.pkl
+│   │       └── tfidf_matrix.pkl
 │   │
 │   ├── models/
-│   │   ├── user.py              ← users table
-│   │   ├── movie.py             ← movies + watchlist tables
-│   │   └── rating.py            ← ratings + comments tables
+│   │   ├── movie.py
+│   │   ├── rating.py
+│   │   └── user.py
 │   │
 │   ├── schemas/
 │   │   ├── user_schema.py
 │   │   ├── movie_schema.py
 │   │   └── rating_schema.py
 │   │
-│   ├── ml/
-│   │   ├── preprocessing.py     ← TF-IDF feature engineering
-│   │   ├── train.py             ← Full training pipeline CLI
-│   │   ├── predict.py           ← Inference (content + collab + hybrid)
-│   │   └── store/               ← Saved .pkl artefacts
-│   │
-│   ├── db/
-│   │   ├── database.py          ← SQLAlchemy engine → users.db
-│   │   └── init_db.py           ← create_all() on startup
-│   │
-│   ├── core/
-│   │   ├── security.py          ← JWT + bcrypt
-│   │   ├── logging.py           ← Structured logging
-│   │   └── utils.py             ← Helpers
-│   │
-│   ├── agent/
-│   │   ├── agent.py             ← Rule-based chat agent
-│   │   ├── tools.py             ← recommend / search / ratings tools
-│   │   ├── memory.py            ← Per-user conversation history
-│   │   └── prompts.py           ← System prompts
-│   │
-│   └── rag/
-│       ├── embeddings.py        ← TF-IDF movie vectors
-│       ├── vector_store.py      ← Cosine-similarity store
-│       └── retrieval.py         ← Context retrieval for RAG
+│   └── services/
+│       ├── movie_service.py
+│       ├── rating_service.py
+│       ├── recommender.py
+│       └── user_service.py
 │
-├── public/                      ← CINEX v2 frontend (served by FastAPI)
-│   ├── index.html
-│   ├── script.js
-│   └── style.css
-│
-├── tests/
-│   ├── test_api.py
-│   └── test_recommender.py
-│
-├── .env
-├── requirements.txt
-├── Dockerfile
-├── docker-compose.yml
-└── README.md
+└── README.md (recommended to add)
 ```
 
 ---
