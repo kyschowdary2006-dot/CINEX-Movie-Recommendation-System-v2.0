@@ -59,12 +59,9 @@ CINEX-Movie-Recommendation-System-v2.0/     # Root folder of the CINEX project
 │       ├── recommender.py                  # Core recommendation engine
 │       └── user_service.py                 # User management logic
 │
-├── public/                                 # Frontend/static website files
-│   ├── index.html                          # Main frontend webpage
-│   ├── style.css                           # Frontend styling
-│   └── script.js                           # Frontend JavaScript functionality
-│
-├── .env                                    # Environment variables and secret keys
+├── index.html                              # Main frontend webpage
+├── style.css                               # Frontend styling
+├── script.js                               # Frontend JavaScript functionality
 ├── Dockerfile                              # Docker image configuration file
 ├── docker-compose.yml                      # Multi-container Docker setup
 ├── requirements.txt                        # Python package dependencies
